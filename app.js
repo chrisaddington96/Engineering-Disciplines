@@ -30,17 +30,25 @@ var server = http.createServer(function (req, res) {
     } else {
         var pathname = url.parse(req.url).pathname;
         res.writeHead(200);
-        switch (pathname) {
-            case '/quiz.html':
-                html = fs.readFileSync('quiz.html');
-                break;
-            case '/submit.html':
-                html = fs.readFileSync('submit.html');
-                break;
-            default:
-                html = fs.readFileSync('index.html');
-                break;
+        
+        if (fs.existsSync(pathname) || pathname !== '') {
+            html = fs.readFileSync(pathname);
         }
+        else {
+            html = fs.readFileSync('index.html')
+        }
+
+        // switch (pathname) {
+        //     case '/quiz.html':
+        //         html = fs.readFileSync('quiz.html');
+        //         break;
+        //     case '/submit.html':
+        //         html = fs.readFileSync('submit.html');
+        //         break;
+        //     default:
+        //         html = fs.readFileSync('index.html');
+        //         break;
+        // }
         res.write(html);
         res.end();
     }
