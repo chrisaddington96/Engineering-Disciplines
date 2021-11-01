@@ -3,6 +3,7 @@ var url = require('url');
 var port = process.env.PORT || 3000,
     http = require('http'),
     fs = require('fs'),
+    path = require('path'),
     html = fs.readFileSync('index.html');
 
 var log = function (entry) {
@@ -28,29 +29,30 @@ var server = http.createServer(function (req, res) {
             res.end();
         });
     } else {
-        var pathname = url.parse(req.url).pathname;
-        res.writeHead(200);
-        
-        if (fs.existsSync(pathname) || pathname !== '') {
-            html = fs.readFileSync(pathname);
-        }
-        else {
-            html = fs.readFileSync('index.html')
+        console.log('Read file ' + req.url);
+
+        if (req.url === '/') {
+            res.writeHead(200);
+            res.write(fs.readFileSync('index.html'));
+            res.end();
+
+            return;
         }
 
-        // switch (pathname) {
-        //     case '/quiz.html':
-        //         html = fs.readFileSync('quiz.html');
-        //         break;
-        //     case '/submit.html':
-        //         html = fs.readFileSync('submit.html');
-        //         break;
-        //     default:
-        //         html = fs.readFileSync('index.html');
-        //         break;
-        // }
-        res.write(html);
-        res.end();
+        fs.readFile(__dirname + req.url, function (err, data) {
+            if (err) {
+                res.writeHead(404);
+                res.write('404 File not found!\n');
+                res.end('Error code: ' + JSON.stringify(err));
+                
+                console.log('File not found ' + req.url);
+                return;
+            }
+
+            res.writeHead(200);
+            res.write(data);
+            res.end();
+        });
     }
 });
 
