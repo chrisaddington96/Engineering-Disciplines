@@ -11,6 +11,7 @@ var log = function (entry) {
 };
 
 var server = http.createServer(function (req, res) {
+    // Handle POST requests
     if (req.method === 'POST') {
         var body = '';
 
@@ -28,9 +29,12 @@ var server = http.createServer(function (req, res) {
             res.writeHead(200, 'OK', { 'Content-Type': 'text/plain' });
             res.end();
         });
+    // Default handler
     } else {
+        // Log the file that's being access
         console.log('Read file ' + req.url);
 
+        // If we're just accessing the website, send index.html
         if (req.url === '/') {
             res.writeHead(200);
             res.write(fs.readFileSync('index.html'));
@@ -39,7 +43,9 @@ var server = http.createServer(function (req, res) {
             return;
         }
 
+        // Read the file specified by the URL otherwise
         fs.readFile(__dirname + req.url, function (err, data) {
+            // If there was an error reading the file, reply with 404
             if (err) {
                 res.writeHead(404);
                 res.write('404 File not found!\n');
@@ -49,6 +55,7 @@ var server = http.createServer(function (req, res) {
                 return;
             }
 
+            // If we read the file successfully, send it
             res.writeHead(200);
             res.write(data);
             res.end();
