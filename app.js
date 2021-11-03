@@ -1,3 +1,4 @@
+/* Database stuff
 // Require AWS
 var AWS = require("aws-sdk");
 
@@ -12,7 +13,7 @@ var docClient = new AWS.DynamoDB.DocumentClient();
 
 // Table is called results
 var table = "Results";
-
+*/
 
 var url = require('url');
 
