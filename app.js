@@ -1,3 +1,19 @@
+// Require AWS
+var AWS = require("aws-sdk");
+
+// Configure AWS
+AWS.config.update({
+    region: "us-east-2",
+    endpoint: "http://localhost:8000"
+});
+
+// Make new document client
+var docClient = new AWS.DynamoDB.DocumentClient();
+
+// Table is called results
+var table = "Results";
+
+
 var url = require('url');
 
 var port = process.env.PORT || 3000,
