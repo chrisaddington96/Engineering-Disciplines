@@ -4,6 +4,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="discipline.js"></script>
 
     <title>Engineering Discipline Quiz </title>
 
@@ -32,7 +33,7 @@
                     style="object-fit:fill; width:300px; height:200px;">
                     </label>
                 
-                    <input name="Q1" value="4"  type="radio" id="four">
+                    <input name="Q1" value="4" type="radio" id="four">
                     <label for="four">
                     <img src="images/Q1/tree.png"
                     style="object-fit:fill; width:300px; height:200px;">
@@ -60,7 +61,7 @@
                     style="object-fit:fill; width:300px; height:200px;">
                     </label>
                 
-                    <input name="Q2" value="4"  type="radio" id="eight">
+                    <input name="Q2" value="4" type="radio" id="eight">
                     <label for="eight">
                     <img src="images/Q1/tree.png"
                     style="object-fit:fill; width:300px; height:200px;">
@@ -77,10 +78,10 @@
 
         <div class="col text-center">
 
-            <a href="submit.html" class="btn btn-light" role="button" onclick="calcDiscipline()">Submit</a>
+            <a id="submit" class="btn btn-light" role="button" onclick="calcDiscipline()">Submit</a>
+            
 
         </div>>
-
     </body>
 
 </html>
