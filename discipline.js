@@ -32,6 +32,7 @@ function calcDiscipline(){
     // Get the questions by element name
     var q1 = document.getElementsByName('Q1');
     var q2 = document.getElementsByName('Q2');
+    var q3 = document.getElementsByName('Q3');
     
     // Get the value q1
     for(i = 0; i < q1.length; i++){
@@ -40,17 +41,26 @@ function calcDiscipline(){
         }
     }
 
+    // Assign values for q2
     if(a1 == 1){
-        compeVal++;
+        aeroVal++;
+        techVal++;
+        matVal++;
     }
     else if(a1 == 2){
         biosVal++;
+        biomVal++;
+        chemVal++;
     }
     else if(a1 == 3){
-        aeroVal++;
+        civilVal++;
+        mechVal++;
+        mineVal++;
     }
     else{
         csVal++;
+        compeVal++;
+        elecVal++;
     }
     
 
@@ -61,28 +71,60 @@ function calcDiscipline(){
         }
     }
 
-    // Assign values for q1
+    // Assign values for q2
     if(a2 == 1){
-        compeVal++;
+        biosVal++;
+        elecVal++;
+        
     }
     else if(a2 == 2){
-        biosVal++;
+        compeVal;
+        csVal++;
+        matVal++;
     }
     else if(a2 == 3){
-        aeroVal++;
+        techVal++;
     }
     else{
-        csVal++;
+        aeroVal++;
+        mechVal++;
+    }
+
+    // Get the value q3
+    for(i = 0; i < q3.length; i++){
+        if(q3[i].checked){
+            var a3 = q3[i].value;
+        }
+    }
+
+    // Assign values for q2
+    if(a3 == 1){
+        biomValm++;
+    }
+    else if(a3 == 2){
+        chemVal++;
+    }
+    else{
+        civilVal++;
+        mineVal++;
     }
     
     
     // Do something with values to assign discipline
-    var disc = [compeVal, biosVal, aeroVal, csVal];
+    var disc = [aeroVal, biomVal, biosVal, chemVal, civilVal ,compeVal, csVal , elecVal, techVal, matVal, mechVal, mineVal];
     var dict={
-        0 : compe,
-        1 : bios,
-        2 : aero,
-        3 : cs
+        0 : aero,
+        1 : biom,
+        2 : bios,
+        3 : chem,
+        4 : civil,
+        5 : compe,
+        6 : cs,
+        7 : elec,
+        8 : tech,
+        9 : mat,
+        10 : mech,
+        11 : mine
     };
     var max_index = 0;
     var max = disc[0];
@@ -92,8 +134,6 @@ function calcDiscipline(){
             max = disc[i];
         }
     }
-    console.log(disc);
-
 
     // Assign correct discipline href to submit button
     var discipline = dict[max_index];
