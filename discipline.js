@@ -101,7 +101,7 @@ function calcDiscipline(){
 
     // Assign values for a3
     if(a3 == 1){
-        biomValm+=2;
+        biomVal+=2;
     }
     else if(a3 == 2){
         chemVal+=2;
