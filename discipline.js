@@ -41,24 +41,24 @@ function calcDiscipline(){
         }
     }
 
-    // Assign values for q2
+    // Assign values for a2
     if(a1 == 1){
-        aeroVal++;
+        aeroVal+=2;
         techVal++;
         matVal++;
     }
     else if(a1 == 2){
-        biosVal++;
+        biosVal+=2;
         biomVal++;
         chemVal++;
     }
     else if(a1 == 3){
-        civilVal++;
+        civilVal+=2;
         mechVal++;
         mineVal++;
     }
     else{
-        csVal++;
+        csVal+=2;
         compeVal++;
         elecVal++;
     }
@@ -71,22 +71,22 @@ function calcDiscipline(){
         }
     }
 
-    // Assign values for q2
+    // Assign values for a2
     if(a2 == 1){
-        biosVal++;
+        biosVal+=2;
         elecVal++;
         
     }
     else if(a2 == 2){
-        compeVal;
+        compeVal+=2;
         csVal++;
         matVal++;
     }
     else if(a2 == 3){
-        techVal++;
+        techVal+=2;
     }
     else{
-        aeroVal++;
+        aeroVal+=2;
         mechVal++;
     }
 
@@ -97,16 +97,74 @@ function calcDiscipline(){
         }
     }
 
-    // Assign values for q2
+    // Assign values for a3
     if(a3 == 1){
-        biomValm++;
+        biomValm+=2;
     }
     else if(a3 == 2){
-        chemVal++;
+        chemVal+=2;
     }
     else{
-        civilVal++;
+        civilVal+=2;
         mineVal++;
+    }
+
+    // Get the value q4
+    for(i = 0; i < q4.length; i++){
+        if(q4[i].checked){
+            var a4 = q4[i].value;
+        }
+    }
+
+    // Assign values for a4
+    if(a4 == 1){
+        csVal+=2;
+        compeVal++;
+        techVal++;
+    }
+    else if(a4 == 2){
+        elecVal+=2;
+        aeroVal++;
+    }
+    else if(a4 == 3){
+        matVal+=2;
+        chemVal++;
+        biomVal++;
+        biosVal++;
+    }
+    else{
+        mineVal+=2;
+        mechVal++;
+        civilVal++;
+    }
+
+    // Get the value q5
+    for(i = 0; i < q5.length; i++){
+        if(q5[i].checked){
+            var a5 = q5[i].value;
+        }
+    }
+
+    // Assign values for a5
+    if(a5 == 1){
+        aero+=2;
+        compeVal++;
+        csVal++;
+    }
+    else if(a5 == 2){
+        biomVal+=2;
+        elecVal++;
+        techVal++;
+    }
+    else if(a5 == 3){
+        chemVal+=2;
+        biosVal++;
+        matVal++;
+    }
+    else{
+        mineVal+=2;
+        mechVal++;
+        civilVal++;
     }
     
     
