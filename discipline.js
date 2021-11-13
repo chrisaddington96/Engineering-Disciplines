@@ -33,6 +33,8 @@ function calcDiscipline(){
     var q1 = document.getElementsByName('Q1');
     var q2 = document.getElementsByName('Q2');
     var q3 = document.getElementsByName('Q3');
+    var q4 = document.getElementsByName('Q4');
+    var q5 = document.getElementsByName('Q5');
     
     // Get the value q1
     for(i = 0; i < q1.length; i++){
@@ -191,7 +193,14 @@ function calcDiscipline(){
             max_index = i;
             max = disc[i];
         }
-    }
+    }   
+
+    console.log(a1);
+    console.log(a2);
+    console.log(a3);
+    console.log(a4);
+    console.log(a5);
+    console.log(disc);
 
     // Assign correct discipline href to submit button
     var discipline = dict[max_index];
