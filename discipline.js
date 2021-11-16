@@ -31,7 +31,8 @@ var techVal = 0;
 var totPoints = 0;
 
 // Objects for creating sorted lists
-const aeroOBJ ={id:"Aerospace Engineering", url="aerospace.html",};
+/*
+const aeroOBJ ={id:"Aerospace Engineering", url="aerospace.html"};
 const biomOBJ ={id:"Biomedical Engineering", url="biomedical.html"};
 const biosOBJ ={id:"Biosystems Engineering", url="biosystems.html"};
 const chemOBJ ={id:"Chemical Engineering", url="chemical.html"};
@@ -44,7 +45,25 @@ const mechOBJ ={id:"Mechanical Engineering", url="mechanical.html"};
 const mineOBJ ={id:"Mining Engineering", url="mining.html"};
 const techOBJ ={id:"Technology Engineering", url="technology.html"};
 const dictGlobalOBJ = [aeroOBJ, biomOBJ, biosOBJ, chemOBJ, civilOBJ, compeOBJ, csOBJ, elecOBJ, techOBJ, matOBJ, mechOBJ, mineOBJ];
+*/
 
+function preloadImage(url){
+    const img = new Image();
+    img.src = url;
+    return img
+  }
+  
+  function preloadImages() {
+    let images = ["images/Q1/aero1-min.jpg", "images/Q1/bios1-min.jpg", "images/Q1/civil1-min.jpg", "images/Q1/cs1-min.jpg", 
+    "images/Q2/bios2-min.JPG", "images/Q2/compe2-min.jpg", "images/Q2/leantech2-min.jpg", "images/Q2/mech2-min.jpg", 
+    "images/Q3/biom3-min.jpg", "images/Q3/chem3-min.jpg", "images/Q3/civil3-min.jpg", "images/Q4/cs4-min.jpg", 
+    "images/Q4/elec4-min.jpg", "images/Q4/mat4-min.jpg", "images/Q4/mine4-min.jpg", "images/Q5/aero5-min.jpg", 
+    "images/Q5/biom5-min.jpg", "images/Q5/chem5-min.jpg", "images/Q5/mine5-min.jpg"];
+    for (var i = 0; i < images.length; i++) {
+      images[i] = preloadImage(images[i])
+    }
+    console.dir(images)
+  }
 
 function calcDiscipline(){
     // Get the questions by element name
