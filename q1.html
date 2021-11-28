@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+    <link rel="preload" href="images/Q1/aero1-min.jpg" as="image">
+    <link rel="preload" href="images/Q1/bios1-min.jpg" as="image">
+    <link rel="preload" href="images/Q1/civil1-min.jpg" as="image">
+    <link rel="preload" href="images/Q1/aero1-min.jpg" as="image">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="discipline.js"></script>
+
+    <title>Engineering Discipline Quiz </title>
+
+
+    <body style="background-color:#262626;">
+        <div>
+            <form id="q1" class="text-center">
+                <!--Question 1-->
+                <h2 style ="color:white; margin-top: 5%;" class="text-center">Question 1</h2>
+                <fieldset id="q1">
+                    <input name="Q1" value="1" type="radio" id="one">
+                    <label for="one">
+                    <img src="images/Q1/aero1-min.jpg"
+                    style="object-fit:fill; width:300px; height:200px;">
+                    </label>        
+                
+                    <input name="Q1" value="2" type="radio" id="two">
+                    <label for="two">
+                    <img src="images/Q1/bios1-min.jpg"
+                    style="object-fit:fill; width:300px; height:200px;">
+                    </label>
+                
+                    <input name="Q1" value="3" type="radio" id="three">
+                    <label for="three">
+                    <img src="images/Q1/civil1-min.jpg"
+                    style="object-fit:fill; width:300px; height:200px;">
+                    </label>
+                
+                    <input name="Q1" value="4" type="radio" id="four">
+                    <label for="four">
+                    <img src="images/Q1/cs1-min.jpg"
+                    style="object-fit:fill; width:300px; height:200px;">
+                    </label>
+                </fieldset>
+
+            </form>
+            <h2 id="selected"></h2>
+
+        </div>>
+
+        <div class="col text-center">
+
+            <a id="submit" class="btn btn-light" role="button" onclick="question1()">Next Question</a>
+            
+
+        </div>>
+    </body>
+
+</html>

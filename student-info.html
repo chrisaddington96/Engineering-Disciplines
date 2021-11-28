@@ -1,0 +1,48 @@
+<div class="main">
+    <p>
+    <h1>Request Info</h1>
+    To request info about our services, fill out the form below and
+    we'll get back to you when we feel like it.
+    </p>
+
+    <form action="http://examples.funwebdev.com/process.php" method="POST">
+        <div class="inputElement">
+            <label for="fname">First name : </label>
+            <input type="text" id="fname" name="fname">
+        </div>
+        <div class="inputElement">
+            <label for="lname">Last name : </label>
+            <input type="text" id="lname" name="lname">
+        </div>
+        <div class="inputElement">
+            <label for="email">Email : </label>
+            <input type="email" id="email" name="email">
+        </div>
+        <div class="inputElement">
+            <label for="networth">Networth : </label>
+            <input type="number" id="networth" name="networth">
+        </div>
+
+        <div class="inputElement">
+            <label for="contact">How would you like to be contacted?</label>
+            <select id="contact" name="contact">
+                <optgroup>
+                    <option value="1">Email me</option>
+                    <option value="2">Send a riddle via mail</option>
+                    <option value="3">Steal my IP info and track me down</option>
+                </optgroup>
+            </select>
+        </div>
+
+        <div class="inputElement">
+            <label for="narc">I am not a narc</label>
+            <input type="checkbox" id="narc" name="narc" value="checked">
+        </div>
+
+        <br>
+        <div class="formSubmit">
+            <input type="submit" value="Submit">
+            <input type="reset">
+        </div>
+    </form>
+</div>
